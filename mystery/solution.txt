@@ -64,12 +64,12 @@ However, she reports seeing the car that fled the scene.  Describes it as a blue
 cd into vehicles
 
 use command
-touch v2.txt
-cat vehicles | grep -A 6 "L337" > v2.txt
-cat v2.txt | grep -A 6 "9" > v2.txt
-cat v2.txt | grep -A 5 -B 1 "Honda" > v2.txt
-cat v2.txt | grep -A 4 -B 2 "Blue" > v2.txt
-cat v2.txt | grep -A 2 -B 4 "6" > v2.txt
+touch v4.txt
+cat vehicles | grep -A 6 "L337" > v4.txt
+cat v4.txt | grep -A 6 "9" > v4.txt
+cat v4.txt | grep -A 5 -B 1 "Honda" > v4.txt
+cat v4.txt | grep -A 4 -B 2 "Blue" > v4.txt
+cat v4.txt | grep -A 2 -B 4 "6" > v4.txt
 
 Which will
 give u 4 suspects
@@ -87,4 +87,4 @@ cat people | grep “Jeremy Bower”
 Jeremy Bowers	M	34	Dunstable Road, line 284
 
 Since Jacquie is female,
-JEREMY IS THE KILLER!
+JEREMY IS THE KILLE
