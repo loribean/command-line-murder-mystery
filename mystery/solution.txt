@@ -1,0 +1,90 @@
+CLUE: Footage from an ATM security camera is blurry but shows that the perpetrator is a tall male, at least 6'.
+CLUE: Found a wallet believed to belong to the killer: no ID, just loose change, and membership cards for AAA, Delta SkyMiles, the local library, and the Museum of Bash History. The cards are totally untraceable and have no name, for some reason.
+CLUE: Questioned the barista at the local coffee shop. He said a woman left right before they heard the shots. The name on her latte was Annabel, she had blond spiky hair and a New Zealand accent
+
+
+Annabel Church	F	38	Buckingham Place, line 179
+member of AAA
+SEE INTERVIEW #699607
+
+Interviewed Ms. Church at 2:04 pm.  Witness stated that she did not see anyone she could identify as the shooter, that she ran away as soon as the shots were fired.
+
+However, she reports seeing the car that fled the scene.  Describes it as a blue Honda, with a license plate that starts with "L337" and ends with "9"
+
+
+Make: Honda
+Color: Blue
+Owner: Jeremy Bowers
+Height: 6'1"
+Weight: 204 lbs
+
+--
+--
+Make: Honda
+Color: Blue
+Owner: Jacqui Maher
+Height: 6'2"
+Weight: 130 lbs
+
+This is my solution ~
+Firstly, use the command
+cat crimescene | grep "CLUE"
+to print crimescene and pipe that to search for clue! You will then get your base of clues.
+
+With that,  use the command
+
+cat people | grep "Annabel"
+
+to find all the Annabels. you have 4 annabels, two are male which you can eliminate, which leaves annabel sun and church.
+
+Next, cd into memberships and use the command
+
+AAA Delta_SkyMiles ... | grep "Annabel"
+
+and you will then find Annabel Church is the Annabel that is in clues.
+
+cd into streets and
+
+cat streets | grep "Buckingham"
+then cat "Buckingham_Place"
+
+to read the file.
+
+which is:
+Annabel Church	F	38	Buckingham Place, line 179
+member of AAA
+SEE INTERVIEW #699607
+
+cd into interviews and
+cat interview-699607
+
+the resulting file is:
+However, she reports seeing the car that fled the scene.  Describes it as a blue Honda, with a license plate that starts with "L337" and ends with "9"
+
+cd into vehicles
+
+use command
+touch v2.txt
+cat vehicles | grep -A 6 "L337" > v2.txt
+cat v2.txt | grep -A 6 "9" > v2.txt
+cat v2.txt | grep -A 5 -B 1 "Honda" > v2.txt
+cat v2.txt | grep -A 4 -B 2 "Blue" > v2.txt
+cat v2.txt | grep -A 2 -B 4 "6" > v2.txt
+
+Which will
+give u 4 suspects
+
+Erika, Joe, Jeremy and Jacquie
+
+cd into memberships and use the command
+
+cat AAA Museum_of_Bash_History Terminal_City_Library Delta_SkyMiles | grep -c "Jacqui Maher"
+
+which will elimate Joe and Erika
+
+Finally, cd into people, and
+cat people | grep “Jeremy Bower”
+Jeremy Bowers	M	34	Dunstable Road, line 284
+
+Since Jacquie is female,
+JEREMY IS THE KILLER!
